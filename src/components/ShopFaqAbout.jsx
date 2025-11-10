@@ -1,7 +1,8 @@
-import { ShoppingBag, Package, HelpCircle, Info } from "lucide-react";
+import { ShoppingBag, Package, HelpCircle, Info, Instagram, Mail } from "lucide-react";
+import HoverIcon from "./HoverIcon";
 
 const ProductCard = ({ title, shot, image, cta }) => (
-  <div className="rounded-2xl border border-white/10 bg-stone-900/40 p-5 text-stone-100 flex flex-col">
+  <div className="group rounded-2xl border border-white/10 bg-stone-900/40 p-5 text-stone-100 flex flex-col hover:border-amber-400/30 transition-colors">
     <div className="aspect-[5/3] rounded-xl overflow-hidden border border-white/10 mb-4">
       <img src={image} alt={title} className="w-full h-full object-cover" />
     </div>
@@ -9,8 +10,8 @@ const ProductCard = ({ title, shot, image, cta }) => (
       <h3 className="font-semibold text-lg">{title}</h3>
       <p className="text-stone-300 text-sm">{shot}</p>
     </div>
-    <button className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-900 px-5 py-3 font-semibold transition">
-      <ShoppingBag className="h-4 w-4" /> {cta}
+    <button className="mt-4 group/btn inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-900 px-5 py-3 font-semibold transition">
+      <HoverIcon icon={ShoppingBag} size={18} className="group/btn" /> {cta}
     </button>
   </div>
 );
@@ -61,7 +62,7 @@ const ShopFaqAbout = () => {
         {/* About & Newsletter */}
         <div id="newsletter" className="grid md:grid-cols-2 gap-8 items-start">
           <div className="rounded-2xl border border-white/10 bg-stone-900/40 p-6">
-            <h3 className="text-xl font-bold mb-2 flex items-center gap-2"><Info className="h-5 w-5 text-amber-400" /> Our story</h3>
+            <h3 className="text-xl font-bold mb-2 flex items-center gap-2"><HoverIcon icon={Info} size={20} /> Our story</h3>
             <p className="text-stone-300">
               Built for travelers, busy pros, and coffee lovers who want premium espresso without the gear. From airport gates to summit views, your perfect cup is now pocket‑sized.
             </p>
@@ -71,7 +72,9 @@ const ShopFaqAbout = () => {
             <p className="text-stone-300 mb-4">Join our newsletter for launch updates and early access.</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <input type="email" required placeholder="you@example.com" className="flex-1 rounded-lg bg-stone-800 border border-white/10 px-4 py-3 outline-none focus:ring-2 focus:ring-amber-400" />
-              <button className="rounded-lg bg-amber-500 hover:bg-amber-400 text-stone-900 px-5 py-3 font-semibold">Subscribe</button>
+              <button className="rounded-lg bg-amber-500 hover:bg-amber-400 text-stone-900 px-5 py-3 font-semibold inline-flex items-center gap-2">
+                <HoverIcon icon={Mail} size={18} /> Subscribe
+              </button>
             </div>
             <p className="text-xs text-stone-400 mt-2">We respect your inbox. Unsubscribe anytime.</p>
           </form>
@@ -80,12 +83,16 @@ const ShopFaqAbout = () => {
         {/* Footer */}
         <footer className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-stone-400">
           <div className="flex items-center gap-2">
-            <Package className="h-4 w-4" />
+            <HoverIcon icon={Package} size={16} />
             <span>© {new Date().getFullYear()} Pocket Espresso Co.</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-amber-300">Instagram</a>
-            <a href="mailto:hello@pocketespresso.co" className="hover:text-amber-300">hello@pocketespresso.co</a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-amber-300 inline-flex items-center gap-1">
+              <HoverIcon icon={Instagram} size={16} /> Instagram
+            </a>
+            <a href="mailto:hello@pocketespresso.co" className="hover:text-amber-300 inline-flex items-center gap-1">
+              <HoverIcon icon={Mail} size={16} /> hello@pocketespresso.co
+            </a>
           </div>
         </footer>
       </div>

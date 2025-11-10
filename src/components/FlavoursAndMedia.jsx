@@ -1,4 +1,5 @@
-import { PlayCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import HoverIcon from "./HoverIcon";
 
 const FlavoursAndMedia = () => {
   return (
@@ -8,8 +9,9 @@ const FlavoursAndMedia = () => {
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold">Flavoured Coffees – Coming Soon</h2>
             <p className="text-stone-300">A taste tour in your pocket. Sign up to be the first to try our vanilla, caramel, and mocha infusions.</p>
-            <a href="#newsletter" className="inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 font-semibold">
-              Pre-Order Flavours <ArrowRight className="h-4 w-4" />
+            <a href="#newsletter" className="group inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 font-semibold">
+              Pre-Order Flavours
+              <span className="inline-flex"><HoverIcon icon={ArrowRight} size={18} /></span>
             </a>
           </div>
           <div className="rounded-2xl overflow-hidden border border-white/10">

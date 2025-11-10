@@ -1,9 +1,10 @@
 import { Coffee, Zap, Backpack, Plane, CheckCircle } from "lucide-react";
+import HoverIcon from "./HoverIcon";
 
-const FeatureItem = ({ icon: Icon, title, desc }) => (
-  <div className="rounded-2xl border border-white/10 bg-stone-900/40 p-6 backdrop-blur">
+const FeatureItem = ({ icon, title, desc }) => (
+  <div className="group rounded-2xl border border-white/10 bg-stone-900/40 p-6 backdrop-blur hover:border-amber-400/30 transition-colors">
     <div className="h-11 w-11 rounded-lg bg-amber-500/20 grid place-items-center mb-4">
-      <Icon className="h-5 w-5 text-amber-400" />
+      <HoverIcon icon={icon} size={20} className="group" />
     </div>
     <h3 className="text-white font-semibold mb-1">{title}</h3>
     <p className="text-stone-300 text-sm">{desc}</p>
@@ -40,11 +41,11 @@ const Features = () => {
               <HowStep number={2} text="Squeeze into milk or water." />
               <HowStep number={3} text="Stir & drink." />
               <div className="flex items-center gap-2 pt-2 text-amber-300">
-                <CheckCircle className="h-5 w-5" />
+                <HoverIcon icon={CheckCircle} size={20} />
                 <span>Designed for life on the move — office, airplane, trail.</span>
               </div>
               <div className="flex items-center gap-3 text-stone-300">
-                <Plane className="h-5 w-5 text-stone-400" />
+                <HoverIcon icon={Plane} size={18} />
                 <span>Carry‑on friendly and equipment‑free.</span>
               </div>
             </div>
